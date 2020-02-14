@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-navigation-stack
+  C:\Program Files\nodejs\node.exe C:\Users\admin\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add react-native-gesture-handler
 
 PATH: 
   ";C:\Users\admin\AppData\Local\Programs\Python\Python36\python.exe";C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\apm\httpd-2.4.38-win64-VC15\Apache24\bin;C:\APM_Setup\Server\Apache\bin;C:\APM_Setup\Server\MySQL5\bin;C:\APM_Setup\Server\PHP5;C:\Program Files (x86)\PuTTY\;C:\Program Files\nodejs\;C:\Program Files\MongoDB;C:\Program Files\Git LFS;C:\php7;C:\ProgramData\ComposerSetup\bin;C:\Bitnami\wampstack-7.3.11-0\php;C:\Bitnami\wampstack-7.3.11-0\mysql\bin;C:\Program Files\Git\cmd;";C:\xampp\mysql\bin\";C:\Users\admin\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\admin\AppData\Local\Programs\Python\Python37-32\;C:\Users\admin\AppData\Local\Programs\Python\Python36\python.exe;C:\Users\admin\AppData\Local\GitHubDesktop\bin;C:\Users\admin\AppData\Roaming\npm;C:\Users\admin\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\admin\AppData\Local\Microsoft\WindowsApps;C:\Users\admin\AppData\Roaming\Composer\vendor\bin;
@@ -28,8 +28,10 @@ npm manifest:
     },
     "dependencies": {
       "@react-native-community/async-storage": "^1.7.1",
+      "@react-native-community/masked-view": "^0.1.6",
       "@react-navigation/native": "^5.0.3",
       "@react-navigation/stack": "^5.0.3",
+      "add": "^2.0.6",
       "apollo-boost": "^0.4.7",
       "apollo-cache-inmemory": "^1.6.5",
       "apollo-cache-persist": "^0.1.1",
@@ -42,8 +44,13 @@ npm manifest:
       "react-dom": "16.8.3",
       "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
       "react-native-gesture-handler": "^1.5.6",
+      "react-native-reanimated": "~1.2.0",
+      "react-native-safe-area-context": "^0.7.3",
+      "react-native-screens": "^1.0.0-alpha.23",
       "react-native-web": "^0.11.7",
       "react-navigation": "^4.1.1",
+      "react-navigation-stack": "^2.1.1",
+      "react-navigation-tabs": "^2.7.0",
       "styled-components": "^5.0.1"
     },
     "devDependencies": {
@@ -1083,6 +1090,11 @@ Lockfile:
       xcode "^2.0.0"
       xmldoc "^0.4.0"
   
+  "@react-native-community/masked-view@^0.1.6":
+    version "0.1.6"
+    resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.6.tgz#c7f2ac187c1f25aa8c30d11baa8f4398eca3bb84"
+    integrity sha512-PpMoeXwPUoldCRKDuSi+zK5rT+sJTW6ri6RdGPkSKRzU77Q1d9IaR0O5IKvBj0XSdL3p+dcOa05gk35aGDffBQ==
+  
   "@react-navigation/core@^3.5.2":
     version "3.5.2"
     resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-3.5.2.tgz#3a3d147b8419e5839e0f2ad4dea086bd2d307fe3"
@@ -1267,6 +1279,11 @@ Lockfile:
     dependencies:
       mime-types "~2.1.24"
       negotiator "0.6.2"
+  
+  add@^2.0.6:
+    version "2.0.6"
+    resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
+    integrity sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=
   
   ansi-colors@^1.0.1:
     version "1.1.0"
@@ -2920,9 +2937,9 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/growly/-/growly-1.3.0.tgz#f10748cbe76af964b7c96c93c6bcc28af120c081"
     integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
   
-  "hammerjs@https://github.com/naver/hammer.js.git":
+  "hammerjs@git+https://github.com/naver/hammer.js.git":
     version "2.0.17-snapshot"
-    resolved "https://github.com/naver/hammer.js.git#54bc698b25edd6e1b76ca975ebaced5ce0467d51"
+    resolved "git+https://github.com/naver/hammer.js.git#54bc698b25edd6e1b76ca975ebaced5ce0467d51"
     dependencies:
       "@types/hammerjs" "^2.0.36"
   
@@ -4958,12 +4975,29 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/react-native-iphone-x-helper/-/react-native-iphone-x-helper-1.2.1.tgz#645e2ffbbb49e80844bb4cbbe34a126fda1e6772"
     integrity sha512-/VbpIEp8tSNNHIvstuA3Swx610whci1Zpc9mqNkqn14DkMbw+ORviln2u0XyHG1kPvvwTNGZY6QpeFwxYaSdbQ==
   
+  react-native-reanimated@~1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-1.2.0.tgz#9219227a52a5dfa4d34c324596d6726ccd874293"
+    integrity sha512-vkWRHrPK5qfHP/ZawlRoo38oeYe9NZaaOH/lmFxRcsKzaSK6x3H5ZPXI8lK6MfTLveqwo1QhJje3zIKXO4nQQw==
+  
+  react-native-safe-area-context@^0.7.3:
+    version "0.7.3"
+    resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-0.7.3.tgz#ad6bd4abbabe195332c53810e4ce5851eb21aa2a"
+    integrity sha512-9Uqu1vlXPi+2cKW/CW6OnHxA76mWC4kF3wvlqzq4DY8hn37AeiXtLFs2WkxH4yXQRrnJdP6ivc65Lz+MqwRZAA==
+  
   react-native-safe-area-view@^0.14.8:
     version "0.14.8"
     resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.8.tgz#ef33c46ff8164ae77acad48c3039ec9c34873e5b"
     integrity sha512-MtRSIcZNstxv87Jet+UsPhEd1tpGe8cVskDXlP657x6rHpSrbrc+y13ZNXrwAgGNNhqQNX7UJT68ZIq//ZRmvw==
     dependencies:
       hoist-non-react-statics "^2.3.1"
+  
+  react-native-screens@^1.0.0-alpha.23:
+    version "1.0.0-alpha.23"
+    resolved "https://registry.yarnpkg.com/react-native-screens/-/react-native-screens-1.0.0-alpha.23.tgz#25d7ea4d11bda4fcde2d1da7ae50271c6aa636e0"
+    integrity sha512-tOxHGQUN83MTmQB4ghoQkibqOdGiX4JQEmeyEv96MKWO/x8T2PJv84ECUos9hD3blPRQwVwSpAid1PPPhrVEaw==
+    dependencies:
+      debounce "^1.2.0"
   
   react-native-view-shot@2.6.0:
     version "2.6.0"
@@ -5040,6 +5074,14 @@ Lockfile:
       ws "^1.1.5"
       xmldoc "^0.4.0"
       yargs "^9.0.0"
+  
+  react-navigation-stack@^2.1.1:
+    version "2.1.1"
+    resolved "https://registry.yarnpkg.com/react-navigation-stack/-/react-navigation-stack-2.1.1.tgz#0e674f9eb1441fdcd67a792ecc9fb0f9349ed22a"
+    integrity sha512-ei2JWgAWrsUgyhIR47bnm9Y2gQMQOpnCIy3JMNeGjW82iqdqvq71SaUksb8rZmjt9J3thCyaH2/ClvHJbMMV2w==
+    dependencies:
+      color "^3.1.2"
+      react-native-iphone-x-helper "^1.2.1"
   
   react-navigation@^4.1.1:
     version "4.1.1"
